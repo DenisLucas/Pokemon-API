@@ -54,5 +54,19 @@ namespace Pokemon.Api.Controllers.Pokemon
             return BadRequest();
 
         }
+        [HttpGet(Base+"getbyggen/{gen}/")]
+        public async Task<IActionResult> GetPokemonsByGeneration([FromQuery] PaginationQuery PaginationQuery,int gen)
+        {
+            var Query = new PokemongenQuery(gen,PaginationQuery);
+            var response = await _mediator.Send(Query);
+            if (PaginationQuery == null || PaginationQuery.page < 1 || PaginationQuery.pageSize < 1)
+            {
+                return Ok(new PageResponse<PokemonViewModel>(response));
+            }
+            var paginationResponse = PaginationHelpers.CreatePaginationUri(_urlServices,PaginationQuery.page,PaginationQuery.pageSize,response);
+            
+            if (response != null) return Ok(paginationResponse);
+            return BadRequest();
+        }
     }
 }

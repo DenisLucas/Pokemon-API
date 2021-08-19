@@ -22,4 +22,17 @@ namespace Pokemon.Core.Pokemon.Query
             pagination = _pagination;
         }
     }
+    public class PokemongenQuery : IRequest<List<PokemonViewModel>>
+    {
+        public int generation;
+        public PaginationQuery pagination;
+        
+        public PokemongenQuery(int _generation, PaginationQuery _pagination)
+        {
+            generation = _generation;
+            pagination = _pagination;
+        
+        }
+    }
+        
 }

@@ -1,0 +1,12 @@
+/home/denis/Downloads/pokeApi/Pokemon.Domain/bin/Debug/net5.0/Pokemon.Domain.deps.json
+/home/denis/Downloads/pokeApi/Pokemon.Domain/bin/Debug/net5.0/Pokemon.Domain.dll
+/home/denis/Downloads/pokeApi/Pokemon.Domain/bin/Debug/net5.0/ref/Pokemon.Domain.dll
+/home/denis/Downloads/pokeApi/Pokemon.Domain/bin/Debug/net5.0/Pokemon.Domain.pdb
+/home/denis/Downloads/pokeApi/Pokemon.Domain/obj/Debug/net5.0/Pokemon.Domain.csprojAssemblyReference.cache
+/home/denis/Downloads/pokeApi/Pokemon.Domain/obj/Debug/net5.0/Pokemon.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/denis/Downloads/pokeApi/Pokemon.Domain/obj/Debug/net5.0/Pokemon.Domain.AssemblyInfoInputs.cache
+/home/denis/Downloads/pokeApi/Pokemon.Domain/obj/Debug/net5.0/Pokemon.Domain.AssemblyInfo.cs
+/home/denis/Downloads/pokeApi/Pokemon.Domain/obj/Debug/net5.0/Pokemon.Domain.csproj.CoreCompileInputs.cache
+/home/denis/Downloads/pokeApi/Pokemon.Domain/obj/Debug/net5.0/Pokemon.Domain.dll
+/home/denis/Downloads/pokeApi/Pokemon.Domain/obj/Debug/net5.0/ref/Pokemon.Domain.dll
+/home/denis/Downloads/pokeApi/Pokemon.Domain/obj/Debug/net5.0/Pokemon.Domain.pdb

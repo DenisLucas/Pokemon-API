@@ -1,13 +1,14 @@
 using System;
 
-namespace Pokemon.Domain.Entities.Pokemon
+namespace Pokemon.Domain.ViewModel.Pokemon
 {
-    public class Pokemon
+    public class PokemonViewModel
     {
-        public int id { get; set; }
+
         public string name { get; set; }
         public string type1 { get; set; }
         public string type2 { get; set; }
+        public int total { get; set; }
         public int hp { get; set; }
         public int attack { get; set; }
         public int defense { get; set; }
@@ -15,6 +16,5 @@ namespace Pokemon.Domain.Entities.Pokemon
         public int speed { get; set; }
         public int generation { get; set; }
         public bool legendary { get; set; }
-    
-    }   
+    }
 }

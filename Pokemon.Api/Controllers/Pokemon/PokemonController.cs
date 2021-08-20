@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Pokemon.Core.Helpers;
+using Pokemon.Core.Pokemon.Command;
 using Pokemon.Core.Pokemon.Interfaces;
 using Pokemon.Core.Pokemon.Query;
 using Pokemon.Core.Pokemon.Response;
@@ -39,33 +40,76 @@ namespace Pokemon.Api.Controllers.Pokemon
         }
 
         [HttpGet(Base)]
-        public async Task<IActionResult> GetAllPokemons([FromQuery]PaginationQuery PaginationQuery,int gen)
+        public async Task<IActionResult> GetAllPokemonsAsync([FromQuery]PaginationQuery paginationQuery,int gen)
         {
             
-            var Query = new AllPokemonsQuery(PaginationQuery);
+            var Query = new AllPokemonsQuery(paginationQuery);
             var response = await _mediator.Send(Query);
-            if (PaginationQuery == null || PaginationQuery.page < 1 || PaginationQuery.pageSize < 1)
+            if (paginationQuery == null || paginationQuery.page < 1 || paginationQuery.pageSize < 1)
             {
                 return Ok(new PageResponse<PokemonViewModel>(response));
             }
-            var paginationResponse = PaginationHelpers.CreatePaginationUri(_urlServices,PaginationQuery.page,PaginationQuery.pageSize,response);
+            var paginationResponse = PaginationHelpers.CreatePaginationUri(_urlServices,paginationQuery.page,paginationQuery.pageSize,response);
             
             if (response != null) return Ok(paginationResponse);
             return BadRequest();
 
         }
         [HttpGet(Base+"By/{gen}/")]
-        public async Task<IActionResult> GetPokemonsByGeneration([FromQuery] PaginationQuery PaginationQuery,int gen)
+        public async Task<IActionResult> GetPokemonsByGenerationAsync([FromQuery] PaginationQuery paginationQuery,int gen)
         {
-            var Query = new PokemongenQuery(gen,PaginationQuery);
+            var Query = new PokemongenQuery(gen,paginationQuery);
             var response = await _mediator.Send(Query);
-            if (PaginationQuery == null || PaginationQuery.page < 1 || PaginationQuery.pageSize < 1)
+            if (paginationQuery == null || paginationQuery.page < 1 || paginationQuery.pageSize < 1)
             {
                 return Ok(new PageResponse<PokemonViewModel>(response));
             }
-            var paginationResponse = PaginationHelpers.CreatePaginationUri(_urlServices,PaginationQuery.page,PaginationQuery.pageSize,response);
+            var paginationResponse = PaginationHelpers.CreatePaginationUri(_urlServices,paginationQuery.page,paginationQuery.pageSize,response);
             
             if (response != null) return Ok(paginationResponse);
+            return BadRequest();
+        }
+
+
+        [HttpPost(Base)]
+        public async Task<IActionResult> CreatePokemonAsync([FromBody] PokemonCommand request)
+        {
+            var Command = await _mediator.Send(request);
+            var uri = _urlServices.GetPokemonUri(Command.id.ToString());
+
+            if (Command != null) return Created(uri,new PokemonViewModel 
+            {
+                Name = Command.name,
+                Type1 = Command.type1,
+                Type2 = Command.type2,
+                Total = Command.total,
+                Hp = Command.hp,
+                Attack = Command.attack,
+                Defense = Command.defense,
+                Spattack = Command.spattack,
+                Speed = Command.speed,
+                Generation = Command.generation,
+                legendary = Convert.ToBoolean(Command.legendary)
+            });
+            return BadRequest(); 
+        }
+        [HttpPut(Base+"{id}/")]
+        public async Task<IActionResult> EditPokemonAsync([FromBody] PokemonEditCommand request, int id)
+        {
+            var pokemon= new PokemonEditWithIdCommand(id,request);
+            var Command = await _mediator.Send(pokemon);
+            var uri = _urlServices.GetPokemonUri(Command.id.ToString());
+
+            if (Command != null) return Ok();
+            return BadRequest(); 
+        }
+
+        [HttpDelete(Base+"{id}/")]
+        public async Task<IActionResult> DeletePokemonAsync(int id)
+        {
+            var pokemon = new DeletePokemonCommand(id);
+            var Command = await _mediator.Send(pokemon);
+            if (Command) return Ok();
             return BadRequest();
         }
     }

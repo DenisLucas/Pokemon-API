@@ -21,18 +21,18 @@ namespace Pokemon.Core.Pokemon.Query
         public async Task<List<PokemonViewModel>> Handle(PokemongenQuery request, CancellationToken cancellationToken)
         {
             var skip = (request.pagination.page - 1) * request.pagination.pageSize;
-            return await _context.pokemons.Where(x=> x.generation == request.generation).OrderBy(x => x.id).Skip(skip).Take(request.pagination.pageSize).Select(pokemon => new PokemonViewModel
+            return await _context.pokemons.Where(x=> x.generation == request.Generation).OrderBy(x => x.id).Skip(skip).Take(request.pagination.pageSize).Select(pokemon => new PokemonViewModel
                 {
-                   name = pokemon.name,
-                   type1 = pokemon.type1,
-                   type2 = pokemon.type2,
-                   total = pokemon.total,
-                   hp = pokemon.hp,
-                   attack = pokemon.attack,
-                   defense = pokemon.defense,
-                   spattack = pokemon.spattack,
-                   speed = pokemon.speed,
-                   generation = pokemon.generation,
+                   Name = pokemon.name,
+                   Type1 = pokemon.type1,
+                   Type2 = pokemon.type2,
+                   Total = pokemon.total,
+                   Hp = pokemon.hp,
+                   Attack = pokemon.attack,
+                   Defense = pokemon.defense,
+                   Spattack = pokemon.spattack,
+                   Speed = pokemon.speed,
+                   Generation = pokemon.generation,
                    legendary = Convert.ToBoolean(pokemon.legendary) 
                 }).ToListAsync();
         }

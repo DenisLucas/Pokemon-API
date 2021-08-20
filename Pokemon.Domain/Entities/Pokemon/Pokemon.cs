@@ -15,7 +15,7 @@ namespace Pokemon.Domain.Entities.Pokemon
         public int spattack { get; set; }
         public int speed { get; set; }
         public int generation { get; set; }
-        public int legendary { get; set; }
+        public byte legendary { get; set; }
     
     }   
 }

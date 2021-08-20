@@ -8,28 +8,28 @@ namespace Pokemon.Core.Pokemon.Query
 {
     public class PokemonQuery : IRequest<PokemonViewModel>
     {
-        public int id;
+        public int Id;
         public PokemonQuery(int _id)
         {
-            id = _id;
+            Id = _id;
         }
     }
     public class AllPokemonsQuery : IRequest<List<PokemonViewModel>>
     {
-        public PaginationQuery pagination;
+        public PaginationQuery Pagination;
         public AllPokemonsQuery(PaginationQuery _pagination)
         {
-            pagination = _pagination;
+            Pagination = _pagination;
         }
     }
     public class PokemongenQuery : IRequest<List<PokemonViewModel>>
     {
-        public int generation;
+        public int Generation;
         public PaginationQuery pagination;
         
         public PokemongenQuery(int _generation, PaginationQuery _pagination)
         {
-            generation = _generation;
+            Generation = _generation;
             pagination = _pagination;
         
         }

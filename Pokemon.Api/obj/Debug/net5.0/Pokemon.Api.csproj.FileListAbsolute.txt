@@ -68,3 +68,6 @@
 /home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/Pokemon.Core.dll
 /home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/Pokemon.Core.pdb
 /home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/mono_crash.21acb2c211.0.json
+/home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/FluentValidation.dll
+/home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/FluentValidation.AspNetCore.dll
+/home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/FluentValidation.DependencyInjectionExtensions.dll

@@ -40,7 +40,7 @@ namespace Pokemon.Api.Controllers.Pokemon
         }
 
         [HttpGet(Base)]
-        public async Task<IActionResult> GetAllPokemonsAsync([FromQuery]PaginationQuery paginationQuery,int gen)
+        public async Task<IActionResult> GetAllPokemonsAsync([FromQuery]PaginationQuery paginationQuery)
         {
             
             var Query = new AllPokemonsQuery(paginationQuery);
@@ -75,21 +75,22 @@ namespace Pokemon.Api.Controllers.Pokemon
         public async Task<IActionResult> CreatePokemonAsync([FromBody] PokemonCommand request)
         {
             var Command = await _mediator.Send(request);
-            var uri = _urlServices.GetPokemonUri(Command.id.ToString());
+            var uri = _urlServices.GetPokemonUri(Command.Id.ToString());
 
             if (Command != null) return Created(uri,new PokemonViewModel 
             {
-                Name = Command.name,
-                Type1 = Command.type1,
-                Type2 = Command.type2,
-                Total = Command.total,
-                Hp = Command.hp,
-                Attack = Command.attack,
-                Defense = Command.defense,
-                Spattack = Command.spattack,
-                Speed = Command.speed,
-                Generation = Command.generation,
-                legendary = Convert.ToBoolean(Command.legendary)
+                Name = Command.Name,
+                Type1 = Command.Type1,
+                Type2 = Command.Type2,
+                Total = Command.Total,
+                Hp = Command.Hp,
+                Attack = Command.Attack,
+                Defense = Command.Defense,
+                SpAttack = Command.SpAttack,
+                SpDefense = Command.SpDefense,
+                Speed = Command.Speed,
+                Generation = Command.Generation,
+                legendary = Convert.ToBoolean(Command.Legendary)
             });
             return BadRequest(); 
         }
@@ -98,7 +99,7 @@ namespace Pokemon.Api.Controllers.Pokemon
         {
             var pokemon= new PokemonEditWithIdCommand(id,request);
             var Command = await _mediator.Send(pokemon);
-            var uri = _urlServices.GetPokemonUri(Command.id.ToString());
+            var uri = _urlServices.GetPokemonUri(Command.Id.ToString());
 
             if (Command != null) return Ok();
             return BadRequest(); 

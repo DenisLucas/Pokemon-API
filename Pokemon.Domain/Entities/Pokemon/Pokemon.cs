@@ -4,18 +4,19 @@ namespace Pokemon.Domain.Entities.Pokemon
 {
     public class Pokemons
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string type1 { get; set; }
-        public string type2 { get; set; }
-        public int total { get; set; }
-        public int hp { get; set; }
-        public int attack { get; set; }
-        public int defense { get; set; }
-        public int spattack { get; set; }
-        public int speed { get; set; }
-        public int generation { get; set; }
-        public byte legendary { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Type1 { get; set; }
+        public string Type2 { get; set; }
+        public int Total { get; set; }
+        public int Hp { get; set; }
+        public int Attack { get; set; }
+        public int Defense { get; set; }
+        public int SpAttack { get; set; }
+        public int SpDefense { get; set; }
+        public int Speed { get; set; }
+        public int Generation { get; set; }
+        public byte Legendary { get; set; }
     
     }   
 }

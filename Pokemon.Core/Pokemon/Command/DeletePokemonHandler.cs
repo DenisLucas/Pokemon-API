@@ -18,7 +18,7 @@ namespace Pokemon.Core.Pokemon.Command
         }
         public async Task<bool> Handle(DeletePokemonCommand request, CancellationToken cancellationToken)
         {
-            var removed = await _context.pokemons.Where(x => x.id == request.Id).FirstOrDefaultAsync();       
+            var removed = await _context.pokemons.Where(x => x.Id == request.Id).FirstOrDefaultAsync();       
             _context.pokemons.Remove(removed);
             var response = await _context.SaveChangesAsync();
             return response > 0;

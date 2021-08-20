@@ -19,20 +19,21 @@ namespace Pokemon.Core.Pokemon.Query
         
         public async Task<PokemonViewModel> Handle(PokemonQuery request, CancellationToken cancellationToken)
         {
-            var response = await _context.pokemons.Where(x => x.id == request.Id)
+            var response = await _context.pokemons.Where(x => x.Id == request.Id)
                 .Select(pokemon => new PokemonViewModel
                 {
-                   Name = pokemon.name,
-                   Type1 = pokemon.type1,
-                   Type2 = pokemon.type2,
-                   Total = pokemon.total,
-                   Hp = pokemon.hp,
-                   Attack = pokemon.attack,
-                   Defense = pokemon.defense,
-                   Spattack = pokemon.spattack,
-                   Speed = pokemon.speed,
-                   Generation = pokemon.generation,
-                   legendary = Convert.ToBoolean(pokemon.legendary) 
+                   Name = pokemon.Name,
+                   Type1 = pokemon.Type1,
+                   Type2 = pokemon.Type2,
+                   Total = pokemon.Total,
+                   Hp = pokemon.Hp,
+                   Attack = pokemon.Attack,
+                   Defense = pokemon.Defense,
+                   SpAttack = pokemon.SpAttack,
+                   SpDefense = pokemon.SpDefense,
+                   Speed = pokemon.Speed,
+                   Generation = pokemon.Generation,
+                   legendary = Convert.ToBoolean(pokemon.Legendary) 
                 }).FirstOrDefaultAsync();
             return response;
         }

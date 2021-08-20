@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "A6JFcHGLOSkL5Vwz5GDEP31sxi9X5gFdaUPrKoQuLwHsgYH7FS1jLus9//Qo1pY7Ww2U73fzgo1y70Vo2vteTw==",
+  "dgSpecHash": "+hbQaseG4tDfcLEfAg/LCKxbCWMrVJle8UaW/NMOK+eTjLXgRFljKo5t2huEROxdDdSngpgE7yEob3XUr7oWBw==",
   "success": true,
   "projectFilePath": "/home/denis/Downloads/pokeApi/Pokemon.Core/Pokemon.Core.csproj",
   "expectedPackageFiles": [
+    "/home/denis/.nuget/packages/fluentvalidation/10.3.1/fluentvalidation.10.3.1.nupkg.sha512",
+    "/home/denis/.nuget/packages/fluentvalidation.aspnetcore/10.3.1/fluentvalidation.aspnetcore.10.3.1.nupkg.sha512",
+    "/home/denis/.nuget/packages/fluentvalidation.dependencyinjectionextensions/10.3.1/fluentvalidation.dependencyinjectionextensions.10.3.1.nupkg.sha512",
     "/home/denis/.nuget/packages/mediatr/9.0.0/mediatr.9.0.0.nupkg.sha512",
     "/home/denis/.nuget/packages/microsoft.aspnetcore.webutilities/2.2.0/microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "/home/denis/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",

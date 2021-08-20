@@ -18,17 +18,18 @@ namespace Pokemon.Core.Pokemon.Command
         {
             var poke = new Pokemons 
             {
-                name = request.name,
-                type1 = request.type1,
-                type2 = request.type2,
-                total = request.hp + request.attack + request.defense + request.spattack + request.speed,
-                hp = request.hp,
-                attack = request.attack,
-                defense = request.defense,
-                spattack = request.spattack,
-                speed = request.speed,
-                generation = request.generation,
-                legendary = Convert.ToByte(request.legendary)
+                Name = request.Name,
+                Type1 = request.Type1,
+                Type2 = request.Type2,
+                Total = request.Hp + request.Attack + request.Defense + request.Spattack + request.Speed,
+                Hp = request.Hp,
+                Attack = request.Attack,
+                Defense = request.Defense,
+                SpAttack = request.Spattack,
+                SpDefense = request.SpDefense,
+                Speed = request.Speed,
+                Generation = request.generation,
+                Legendary = Convert.ToByte(request.legendary)
             };
             await _context.pokemons.AddAsync(poke);
             await _context.SaveChangesAsync();

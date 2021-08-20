@@ -21,7 +21,7 @@ namespace Pokemon.Core.Pokemon.Query
         public async Task<List<PokemonViewModel>> Handle(AllPokemonsQuery request, CancellationToken cancellationToken)
         {
             var skip = (request.pagination.page - 1) * request.pagination.pageSize;
-            return await _context.pokemons.Where(x => x.id > skip && x.id <= request.pagination.pageSize).Select(pokemon => new PokemonViewModel
+            return await _context.pokemons.OrderBy(x => x.id).Skip(skip).Take(request.pagination.pageSize).Select(pokemon => new PokemonViewModel
                 {
                    name = pokemon.name,
                    type1 = pokemon.type1,

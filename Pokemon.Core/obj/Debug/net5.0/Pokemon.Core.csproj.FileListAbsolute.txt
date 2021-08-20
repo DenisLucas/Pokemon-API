@@ -1,0 +1,17 @@
+/home/denis/Downloads/pokeApi/Pokemon.Core/bin/Debug/net5.0/Pokemon.Core.deps.json
+/home/denis/Downloads/pokeApi/Pokemon.Core/bin/Debug/net5.0/Pokemon.Core.dll
+/home/denis/Downloads/pokeApi/Pokemon.Core/bin/Debug/net5.0/ref/Pokemon.Core.dll
+/home/denis/Downloads/pokeApi/Pokemon.Core/bin/Debug/net5.0/Pokemon.Core.pdb
+/home/denis/Downloads/pokeApi/Pokemon.Core/bin/Debug/net5.0/Pokemon.Domain.dll
+/home/denis/Downloads/pokeApi/Pokemon.Core/bin/Debug/net5.0/Pokemon.Infrastructure.dll
+/home/denis/Downloads/pokeApi/Pokemon.Core/bin/Debug/net5.0/Pokemon.Domain.pdb
+/home/denis/Downloads/pokeApi/Pokemon.Core/bin/Debug/net5.0/Pokemon.Infrastructure.pdb
+/home/denis/Downloads/pokeApi/Pokemon.Core/obj/Debug/net5.0/Pokemon.Core.csprojAssemblyReference.cache
+/home/denis/Downloads/pokeApi/Pokemon.Core/obj/Debug/net5.0/Pokemon.Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/denis/Downloads/pokeApi/Pokemon.Core/obj/Debug/net5.0/Pokemon.Core.AssemblyInfoInputs.cache
+/home/denis/Downloads/pokeApi/Pokemon.Core/obj/Debug/net5.0/Pokemon.Core.AssemblyInfo.cs
+/home/denis/Downloads/pokeApi/Pokemon.Core/obj/Debug/net5.0/Pokemon.Core.csproj.CoreCompileInputs.cache
+/home/denis/Downloads/pokeApi/Pokemon.Core/obj/Debug/net5.0/Pokemon.Core.csproj.CopyComplete
+/home/denis/Downloads/pokeApi/Pokemon.Core/obj/Debug/net5.0/Pokemon.Core.dll
+/home/denis/Downloads/pokeApi/Pokemon.Core/obj/Debug/net5.0/ref/Pokemon.Core.dll
+/home/denis/Downloads/pokeApi/Pokemon.Core/obj/Debug/net5.0/Pokemon.Core.pdb

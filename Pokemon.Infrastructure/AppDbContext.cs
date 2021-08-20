@@ -10,7 +10,7 @@ namespace Pokemon.Infrastructure
         {
 
         }
-        public DbSet<PokemonEntity> pokemons { get; set; }
+        public DbSet<Pokemons> pokemons { get; set; }
     }
 }
 

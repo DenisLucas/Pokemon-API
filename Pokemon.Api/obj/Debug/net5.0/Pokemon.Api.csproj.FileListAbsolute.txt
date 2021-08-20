@@ -65,3 +65,6 @@
 /home/denis/Downloads/pokeApi/Pokemon.Api/obj/Debug/net5.0/Pokemon.Api.genruntimeconfig.cache
 /home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/Humanizer.dll
 /home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Design.dll
+/home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/Pokemon.Core.dll
+/home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/Pokemon.Core.pdb
+/home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/mono_crash.21acb2c211.0.json

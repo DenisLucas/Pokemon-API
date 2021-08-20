@@ -18,7 +18,7 @@ namespace Pokemon.Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "5.0.9")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Pokemon.Domain.Entities.Pokemon.PokemonEntity", b =>
+            modelBuilder.Entity("Pokemon.Domain.Entities.Pokemon.Pokemons", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -47,6 +47,9 @@ namespace Pokemon.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("speed")
+                        .HasColumnType("int");
+
+                    b.Property<int>("total")
                         .HasColumnType("int");
 
                     b.Property<string>("type1")

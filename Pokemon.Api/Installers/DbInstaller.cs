@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Pokemon.Core.Pokemon.Helpers;
+using Pokemon.Util.Helpers;
 using Pokemon.Infrastructure;
 
 namespace Pokemon.Api.Installers

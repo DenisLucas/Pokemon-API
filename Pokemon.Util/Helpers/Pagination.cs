@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Pokemon.Core.Pokemon.Helpers;
+using Pokemon.Util.Helpers;
 using Pokemon.Core.Pokemon.Response;
 using Pokemon.Core.Pokemon.Response.Query;
 using Pokemon.Domain.ViewModel.Pokemon;

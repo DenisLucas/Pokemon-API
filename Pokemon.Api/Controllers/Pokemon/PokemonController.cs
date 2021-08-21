@@ -1,11 +1,10 @@
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Pokemon.Core.Helpers;
 using Pokemon.Core.Pokemon.Command;
-using Pokemon.Core.Pokemon.Helpers;
+using Pokemon.Util.Helpers;
 using Pokemon.Core.Pokemon.Query;
 using Pokemon.Core.Pokemon.Response;
 using Pokemon.Core.Pokemon.Response.Query;

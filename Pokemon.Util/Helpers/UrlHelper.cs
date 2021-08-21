@@ -2,7 +2,7 @@ using System;
 using Microsoft.AspNetCore.WebUtilities;
 using Pokemon.Core.Pokemon.Response.Query;
 
-namespace Pokemon.Core.Pokemon.Helpers
+namespace Pokemon.Util.Helpers
 {
     public class UrlHelper
     {

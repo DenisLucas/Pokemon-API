@@ -6,7 +6,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Pokemon.Api.Controllers.Pokemon;
 using Pokemon.Core.Pokemon.Command;
-using Pokemon.Core.Pokemon.Helpers;
+using Pokemon.Util.Helpers;
 using Xunit;
 namespace Pokemon.Tests.Pokemon
 {

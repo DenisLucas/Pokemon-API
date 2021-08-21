@@ -10,7 +10,7 @@ namespace Pokemon.Tests.Pokemon
     {
         
         [Fact]
-        public void CreatePokemonValidatorTestShouldReturnError()
+        public void createPokemonValidatorTestShouldReturnError()
         {
             var pokemon = new CreatePokemonCommand
                 {
@@ -25,14 +25,14 @@ namespace Pokemon.Tests.Pokemon
             var result = Validator.TestValidate(pokemon);
             result.ShouldHaveValidationErrorFor(s=> s.Attack);
             result.ShouldHaveValidationErrorFor(s=> s.Defense);
-            result.ShouldHaveValidationErrorFor(s=> s.Spattack);
+            result.ShouldHaveValidationErrorFor(s=> s.SpAttack);
             result.ShouldHaveValidationErrorFor(s=> s.SpDefense);
             result.ShouldHaveValidationErrorFor(s=> s.Speed);
             result.ShouldHaveValidationErrorFor(s=> s.Hp);
             
         }
         [Fact]
-        public void EditPokemonValidatorTestShouldReturnError()
+        public void editPokemonValidatorTestShouldReturnError()
         {
             var pokemon = new EditPokemonCommand
                 {

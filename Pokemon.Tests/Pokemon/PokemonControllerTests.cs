@@ -14,7 +14,7 @@ namespace Pokemon.Tests.Pokemon
     public class PokemonControllerTests
     {
         [Fact]
-        public async Task CreatePokemonAsyncShouldReturnPokemonModelView()
+        public async Task createPokemonAsyncShouldReturnPokemonModelView()
         {
         //Given
         var _mediator = A.Fake<IMediator>();
@@ -29,10 +29,10 @@ namespace Pokemon.Tests.Pokemon
                 Hp = 100,
                 Attack = 50,
                 Defense = 10,
-                Spattack = 20,
+                SpAttack = 20,
                 SpDefense = 10,
                 Speed = 6,
-                generation = 3,
+                Generation = 3,
                 Legendary = false
 
             };
@@ -49,7 +49,7 @@ namespace Pokemon.Tests.Pokemon
         Assert.IsType<CreatedResult>(result);
         }
         [Fact]
-        public async Task EditPokemonAsyncShouldReturnPokemonModelView()
+        public async Task editPokemonAsyncShouldReturnPokemonModelView()
         {
         //Given
         var _mediator = A.Fake<IMediator>();

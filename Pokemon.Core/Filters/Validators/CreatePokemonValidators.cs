@@ -17,13 +17,13 @@ namespace Pokemon.Core.Filters.Validators
             RuleFor(x => x.Defense)
                 .NotEmpty()
                 .GreaterThan(0);
-            RuleFor(x => x.Spattack)
+            RuleFor(x => x.SpAttack)
                 .NotEmpty()
                 .GreaterThan(0);
             RuleFor(x => x.Speed)
                 .NotEmpty()
                 .GreaterThan(0);
-            RuleFor(x => x.Spattack)
+            RuleFor(x => x.SpAttack)
                 .NotEmpty()
                 .GreaterThan(0);
             RuleFor(x => x.SpDefense)

@@ -21,14 +21,14 @@ namespace Pokemon.Core.Pokemon.Command
                 Name = request.Name,
                 Type1 = request.Type1,
                 Type2 = request.Type2,
-                Total = request.Hp + request.Attack + request.Defense + request.Spattack + request.Speed,
+                Total = request.Hp + request.Attack + request.Defense + request.SpAttack + request.Speed,
                 Hp = request.Hp,
                 Attack = request.Attack,
                 Defense = request.Defense,
-                SpAttack = request.Spattack,
+                SpAttack = request.SpAttack,
                 SpDefense = request.SpDefense,
                 Speed = request.Speed,
-                Generation = request.generation,
+                Generation = request.Generation,
                 Legendary = Convert.ToByte(request.Legendary)
             };
             await _context.Pokemons.AddAsync(poke);

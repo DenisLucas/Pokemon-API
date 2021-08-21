@@ -15,11 +15,10 @@ namespace Pokemon.Core.Pokemon.Command
         public int Hp { get; set; }
         public int Attack { get; set; }
         public int Defense { get; set; }
-        public int Spattack { get; set; }
-
+        public int SpAttack { get; set; }
         public int SpDefense { get; set; }
         public int Speed { get; set; }
-        public int generation { get; set; }
+        public int Generation { get; set; }
         public bool Legendary { get; set; }
     }
         

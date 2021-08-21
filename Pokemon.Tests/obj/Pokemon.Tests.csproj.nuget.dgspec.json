@@ -34,6 +34,9 @@
               },
               "/home/denis/Downloads/pokeApi/Pokemon.Infrastructure/Pokemon.Infrastructure.csproj": {
                 "projectPath": "/home/denis/Downloads/pokeApi/Pokemon.Infrastructure/Pokemon.Infrastructure.csproj"
+              },
+              "/home/denis/Downloads/pokeApi/Pokemon.Util/Pokemon.Util.csproj": {
+                "projectPath": "/home/denis/Downloads/pokeApi/Pokemon.Util/Pokemon.Util.csproj"
               }
             }
           }
@@ -48,6 +51,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
             "FluentValidation": {
               "target": "Package",
               "version": "[10.3.1, )"
@@ -142,6 +153,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
             "FluentValidation": {
               "target": "Package",
               "version": "[10.3.1, )"
@@ -333,6 +348,9 @@
               },
               "/home/denis/Downloads/pokeApi/Pokemon.Core/Pokemon.Core.csproj": {
                 "projectPath": "/home/denis/Downloads/pokeApi/Pokemon.Core/Pokemon.Core.csproj"
+              },
+              "/home/denis/Downloads/pokeApi/Pokemon.Util/Pokemon.Util.csproj": {
+                "projectPath": "/home/denis/Downloads/pokeApi/Pokemon.Util/Pokemon.Util.csproj"
               }
             }
           }
@@ -374,6 +392,68 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.203/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/denis/Downloads/pokeApi/Pokemon.Util/Pokemon.Util.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/denis/Downloads/pokeApi/Pokemon.Util/Pokemon.Util.csproj",
+        "projectName": "Pokemon.Util",
+        "projectPath": "/home/denis/Downloads/pokeApi/Pokemon.Util/Pokemon.Util.csproj",
+        "packagesPath": "/home/denis/.nuget/packages/",
+        "outputPath": "/home/denis/Downloads/pokeApi/Pokemon.Util/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/denis/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/denis/Downloads/pokeApi/Pokemon.Core/Pokemon.Core.csproj": {
+                "projectPath": "/home/denis/Downloads/pokeApi/Pokemon.Core/Pokemon.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.WebUtilities": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             }
           },
           "imports": [

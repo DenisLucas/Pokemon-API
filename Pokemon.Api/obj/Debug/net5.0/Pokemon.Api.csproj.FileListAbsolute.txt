@@ -73,3 +73,5 @@
 /home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/FluentValidation.DependencyInjectionExtensions.dll
 /home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/Pokemon.Util.dll
 /home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/Pokemon.Util.pdb
+/home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/AutoMapper.dll
+/home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

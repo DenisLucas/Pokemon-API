@@ -27,6 +27,9 @@ namespace Pokemon.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.InstallServicesInAssembly(Configuration);
+            var assembly = AppDomain.CurrentDomain.Load("Pokemon.Core");
+            
+            services.AddAutoMapper(assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

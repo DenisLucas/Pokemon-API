@@ -152,3 +152,7 @@
 /home/denis/Downloads/pokeApi/Pokemon.Tests/obj/Debug/net5.0/ref/Pokemon.Tests.dll
 /home/denis/Downloads/pokeApi/Pokemon.Tests/obj/Debug/net5.0/Pokemon.Tests.pdb
 /home/denis/Downloads/pokeApi/Pokemon.Tests/obj/Debug/net5.0/Pokemon.Tests.genruntimeconfig.cache
+/home/denis/Downloads/pokeApi/Pokemon.Tests/bin/Debug/net5.0/AutoMapper.dll
+/home/denis/Downloads/pokeApi/Pokemon.Tests/bin/Debug/net5.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/home/denis/Downloads/pokeApi/Pokemon.Tests/bin/Debug/net5.0/Pokemon.Util.dll
+/home/denis/Downloads/pokeApi/Pokemon.Tests/bin/Debug/net5.0/Pokemon.Util.pdb

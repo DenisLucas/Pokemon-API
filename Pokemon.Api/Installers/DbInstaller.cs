@@ -28,7 +28,7 @@ namespace Pokemon.Api.Installers
                     return new UrlHelper(absolutUri);
                 }
             );
-
+            
 
  
         }

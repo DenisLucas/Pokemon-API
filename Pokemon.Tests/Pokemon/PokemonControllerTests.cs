@@ -1,6 +1,7 @@
 
 using System;
 using System.Threading.Tasks;
+using AutoMapper;
 using FakeItEasy;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,8 @@ namespace Pokemon.Tests.Pokemon
         //Given
         var _mediator = A.Fake<IMediator>();
         var _urlServices = A.Fake<UrlHelper>();
-        PokemonController pokemonController = new PokemonController(_mediator,_urlServices);
+        var _mapper = A.Fake<IMapper>();
+        PokemonController pokemonController = new PokemonController(_mediator,_urlServices,_mapper);
         var pokemon = new CreatePokemonCommand
             {
                 Name = "Pokemon",
@@ -52,7 +54,8 @@ namespace Pokemon.Tests.Pokemon
         //Given
         var _mediator = A.Fake<IMediator>();
         var _urlServices = A.Fake<UrlHelper>();
-        PokemonController pokemonController = new PokemonController(_mediator,_urlServices);
+        var _mapper = A.Fake<IMapper>();
+        PokemonController pokemonController = new PokemonController(_mediator,_urlServices,_mapper);
         var pokemon = new EditPokemonCommand
             {
                 Name = "Pokemon",

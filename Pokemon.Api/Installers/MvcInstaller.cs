@@ -1,3 +1,4 @@
+using System;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,7 +15,9 @@ namespace Pokemon.Api.Installers
             services.AddControllers();
             services.AddMvc(options =>
                 options.Filters.Add<ValidationFilter>());
-            services.AddFluentValidation(mvcConfiguration=> mvcConfiguration.RegisterValidatorsFromAssemblyContaining<Startup>());
+            
+            var assembly = AppDomain.CurrentDomain.Load("Pokemon.Core");
+            services.AddFluentValidation(mvcConfiguration=> mvcConfiguration.RegisterValidatorsFromAssembly(assembly));
 
             
             

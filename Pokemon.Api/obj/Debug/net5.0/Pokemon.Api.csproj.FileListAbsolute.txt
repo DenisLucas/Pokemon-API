@@ -71,3 +71,5 @@
 /home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/FluentValidation.dll
 /home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/FluentValidation.AspNetCore.dll
 /home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/FluentValidation.DependencyInjectionExtensions.dll
+/home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/Pokemon.Util.dll
+/home/denis/Downloads/pokeApi/Pokemon.Api/bin/Debug/net5.0/Pokemon.Util.pdb

@@ -42,6 +42,7 @@
           "Pokemon.Core": "1.0.0",
           "Pokemon.Domain": "1.0.0",
           "Pokemon.Infrastructure": "1.0.0",
+          "Pokemon.Util": "1.0.0",
           "Swashbuckle.AspNetCore": "6.1.5",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
@@ -1499,6 +1500,18 @@
         },
         "compile": {
           "Pokemon.Infrastructure.dll": {}
+        }
+      },
+      "Pokemon.Util/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.WebUtilities": "2.2.0",
+          "Pokemon.Core": "1.0.0"
+        },
+        "runtime": {
+          "Pokemon.Util.dll": {}
+        },
+        "compile": {
+          "Pokemon.Util.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -3983,6 +3996,11 @@
       "sha512": ""
     },
     "Pokemon.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Pokemon.Util/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

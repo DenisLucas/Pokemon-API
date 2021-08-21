@@ -1726,6 +1726,20 @@
         "runtime": {
           "bin/placeholder/Pokemon.Infrastructure.dll": {}
         }
+      },
+      "Pokemon.Util/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.WebUtilities": "2.2.0",
+          "Pokemon.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Pokemon.Util.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Pokemon.Util.dll": {}
+        }
       }
     }
   },
@@ -6256,6 +6270,11 @@
       "type": "project",
       "path": "../Pokemon.Infrastructure/Pokemon.Infrastructure.csproj",
       "msbuildProject": "../Pokemon.Infrastructure/Pokemon.Infrastructure.csproj"
+    },
+    "Pokemon.Util/1.0.0": {
+      "type": "project",
+      "path": "../Pokemon.Util/Pokemon.Util.csproj",
+      "msbuildProject": "../Pokemon.Util/Pokemon.Util.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6269,6 +6288,7 @@
       "Pokemon.Core >= 1.0.0",
       "Pokemon.Domain >= 1.0.0",
       "Pokemon.Infrastructure >= 1.0.0",
+      "Pokemon.Util >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.1.5"
     ]
   },
@@ -6305,6 +6325,9 @@
             },
             "/home/denis/Downloads/pokeApi/Pokemon.Infrastructure/Pokemon.Infrastructure.csproj": {
               "projectPath": "/home/denis/Downloads/pokeApi/Pokemon.Infrastructure/Pokemon.Infrastructure.csproj"
+            },
+            "/home/denis/Downloads/pokeApi/Pokemon.Util/Pokemon.Util.csproj": {
+              "projectPath": "/home/denis/Downloads/pokeApi/Pokemon.Util/Pokemon.Util.csproj"
             }
           }
         }

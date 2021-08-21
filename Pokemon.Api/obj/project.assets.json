@@ -6267,6 +6267,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 5.0.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.9",
       "Pokemon.Core >= 1.0.0",
+      "Pokemon.Domain >= 1.0.0",
       "Pokemon.Infrastructure >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.1.5"
     ]
@@ -6298,6 +6299,9 @@
           "projectReferences": {
             "/home/denis/Downloads/pokeApi/Pokemon.Core/Pokemon.Core.csproj": {
               "projectPath": "/home/denis/Downloads/pokeApi/Pokemon.Core/Pokemon.Core.csproj"
+            },
+            "/home/denis/Downloads/pokeApi/Pokemon.Domain/Pokemon.Domain.csproj": {
+              "projectPath": "/home/denis/Downloads/pokeApi/Pokemon.Domain/Pokemon.Domain.csproj"
             },
             "/home/denis/Downloads/pokeApi/Pokemon.Infrastructure/Pokemon.Infrastructure.csproj": {
               "projectPath": "/home/denis/Downloads/pokeApi/Pokemon.Infrastructure/Pokemon.Infrastructure.csproj"

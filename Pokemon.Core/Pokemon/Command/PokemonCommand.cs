@@ -20,7 +20,7 @@ namespace Pokemon.Core.Pokemon.Command
         public int SpDefense { get; set; }
         public int Speed { get; set; }
         public int generation { get; set; }
-        public bool legendary { get; set; }
+        public bool Legendary { get; set; }
     }
     public class PokemonEditCommand
     {

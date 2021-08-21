@@ -29,7 +29,7 @@ namespace Pokemon.Core.Pokemon.Command
                 SpDefense = request.SpDefense,
                 Speed = request.Speed,
                 Generation = request.generation,
-                Legendary = Convert.ToByte(request.legendary)
+                Legendary = Convert.ToByte(request.Legendary)
             };
             await _context.pokemons.AddAsync(poke);
             await _context.SaveChangesAsync();

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "T6MHYGO/HEsUcJ7Zi1Xhw/I9NMawHedAtavqUCk7OdNv7EYTHenolH4rR9ZH5QWmezboUjr5mR9opaF6rEqwVw==",
+  "dgSpecHash": "7cgoUhBJ25r22dSQP6k2Kf5TfN9pZt6RA2PeZYx2PqrNeTxcjKZizTfKVF6Bo4DAOcVbyORcOrsKfNcpR9IkWw==",
   "success": true,
   "projectFilePath": "/home/denis/Downloads/pokeApi/Pokemon.Api/Pokemon.Api.csproj",
   "expectedPackageFiles": [

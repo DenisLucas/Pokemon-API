@@ -25,8 +25,6 @@ namespace Pokemon.Core.Filters.Validators
             RuleFor(x => x.SpDefense)
                 .NotEmpty()
                 .GreaterThan(0);
-            
-
         }
     }
 }

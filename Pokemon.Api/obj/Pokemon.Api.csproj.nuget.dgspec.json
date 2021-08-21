@@ -29,6 +29,9 @@
               "/home/denis/Downloads/pokeApi/Pokemon.Core/Pokemon.Core.csproj": {
                 "projectPath": "/home/denis/Downloads/pokeApi/Pokemon.Core/Pokemon.Core.csproj"
               },
+              "/home/denis/Downloads/pokeApi/Pokemon.Domain/Pokemon.Domain.csproj": {
+                "projectPath": "/home/denis/Downloads/pokeApi/Pokemon.Domain/Pokemon.Domain.csproj"
+              },
               "/home/denis/Downloads/pokeApi/Pokemon.Infrastructure/Pokemon.Infrastructure.csproj": {
                 "projectPath": "/home/denis/Downloads/pokeApi/Pokemon.Infrastructure/Pokemon.Infrastructure.csproj"
               }

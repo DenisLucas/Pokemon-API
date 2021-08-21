@@ -110,8 +110,7 @@ namespace Pokemon.Api.Controllers.Pokemon
         {
             var pokemon = new DeletePokemonCommand(id);
             var Command = await _mediator.Send(pokemon);
-            if (Command) return Ok();
-            return BadRequest();
+            return Ok();
         }
     }
 }

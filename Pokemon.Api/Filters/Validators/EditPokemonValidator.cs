@@ -3,7 +3,7 @@ using Pokemon.Core.Pokemon.Command;
 
 namespace Pokemon.Core.Filters.Validators
 {
-    public class EditPokemonValidators : AbstractValidator<PokemonEditCommand>
+    public class EditPokemonValidators : AbstractValidator<EditPokemonCommand>
     {
         public EditPokemonValidators()
         {

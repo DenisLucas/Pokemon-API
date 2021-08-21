@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Pokemon.Core.Helpers;
 using Pokemon.Core.Pokemon.Command;
-using Pokemon.Core.Pokemon.Interfaces;
+using Pokemon.Core.Pokemon.Helpers;
 using Pokemon.Core.Pokemon.Query;
 using Pokemon.Core.Pokemon.Response;
 using Pokemon.Core.Pokemon.Response.Query;
@@ -20,62 +19,63 @@ namespace Pokemon.Api.Controllers.Pokemon
     {
         private readonly IMediator _mediator;
 
-        private readonly IUrlServices _urlServices;
+        private readonly UrlHelper _urlHelpers;
         private const string Base = "/api/pokemon/";
-        public PokemonController(IMediator mediator, IUrlServices urlServices)
+        public PokemonController(IMediator mediator, UrlHelper urlHelpers)
         {
             _mediator = mediator;
-            _urlServices = urlServices;
+            _urlHelpers = urlHelpers;
 
         }
 
         [HttpGet(Base + "{id}/")]
-        public async Task<IActionResult> GetPokemonById(int id)
+        public async Task<IActionResult> getPokemonById(int id)
         {
-            var Query = new PokemonQuery(id);
+            var Query = new GetPokemonByIdQuery(id);
             var response = await _mediator.Send(Query);
-            var locationuri = _urlServices.GetPokemonUri(id.ToString());
             if (response != null) return Ok(new Response<PokemonViewModel>(response));
             return BadRequest();
         }
 
         [HttpGet(Base)]
-        public async Task<IActionResult> GetAllPokemonsAsync([FromQuery]PaginationQuery paginationQuery)
+        public async Task<IActionResult> getAllPokemonsAsync([FromQuery]PaginationQuery paginationQuery)
         {
             
-            var Query = new AllPokemonsQuery(paginationQuery);
+            var Query = new GetAllPokemonsQuery(paginationQuery);
             var response = await _mediator.Send(Query);
             if (paginationQuery == null || paginationQuery.page < 1 || paginationQuery.pageSize < 1)
             {
                 return Ok(new PageResponse<PokemonViewModel>(response));
             }
-            var paginationResponse = PaginationHelpers.CreatePaginationUri(_urlServices,paginationQuery.page,paginationQuery.pageSize,response);
-            
+            var pk = new PokemonPagination();
+            var paginationResponse = pk.pagination(_urlHelpers,response,paginationQuery);
+         
             if (response != null) return Ok(paginationResponse);
             return BadRequest();
 
         }
         [HttpGet(Base+"By/{gen}/")]
-        public async Task<IActionResult> GetPokemonsByGenerationAsync([FromQuery] PaginationQuery paginationQuery,int gen)
+        public async Task<IActionResult> getPokemonsByGenerationAsync([FromQuery] PaginationQuery paginationQuery,int gen)
         {
-            var Query = new PokemongenQuery(gen,paginationQuery);
+            var Query = new GetAllPokemonsByGenQuery(gen,paginationQuery);
             var response = await _mediator.Send(Query);
             if (paginationQuery == null || paginationQuery.page < 1 || paginationQuery.pageSize < 1)
             {
                 return Ok(new PageResponse<PokemonViewModel>(response));
             }
-            var paginationResponse = PaginationHelpers.CreatePaginationUri(_urlServices,paginationQuery.page,paginationQuery.pageSize,response);
-            
+            var pk = new PokemonPagination();
+            var paginationResponse = pk.pagination(_urlHelpers,response,paginationQuery);
+         
             if (response != null) return Ok(paginationResponse);
             return BadRequest();
         }
 
 
         [HttpPost(Base)]
-        public async Task<IActionResult> CreatePokemonAsync([FromBody] PokemonCommand request)
+        public async Task<IActionResult> createPokemonAsync([FromBody] CreatePokemonCommand request)
         {
             var Command = await _mediator.Send(request);
-            var uri = _urlServices.GetPokemonUri(Command.Id.ToString());
+            var uri = _urlHelpers.GetUri(Command.Id.ToString());
 
             if (Command != null) return Created(uri,new PokemonViewModel 
             {
@@ -90,23 +90,23 @@ namespace Pokemon.Api.Controllers.Pokemon
                 SpDefense = Command.SpDefense,
                 Speed = Command.Speed,
                 Generation = Command.Generation,
-                legendary = Convert.ToBoolean(Command.Legendary)
+                Legendary = Convert.ToBoolean(Command.Legendary)
             });
             return BadRequest(); 
         }
         [HttpPut(Base+"{id}/")]
-        public async Task<IActionResult> EditPokemonAsync([FromBody] PokemonEditCommand request, int id)
+        public async Task<IActionResult> editPokemonAsync([FromBody] EditPokemonCommand request, int id)
         {
             var pokemon= new PokemonEditWithIdCommand(id,request);
             var Command = await _mediator.Send(pokemon);
-            var uri = _urlServices.GetPokemonUri(Command.Id.ToString());
+            var uri = _urlHelpers.GetUri(Command.Id.ToString());
 
             if (Command != null) return Ok();
             return BadRequest(); 
         }
 
         [HttpDelete(Base+"{id}/")]
-        public async Task<IActionResult> DeletePokemonAsync(int id)
+        public async Task<IActionResult> deletePokemonAsync(int id)
         {
             var pokemon = new DeletePokemonCommand(id);
             var Command = await _mediator.Send(pokemon);

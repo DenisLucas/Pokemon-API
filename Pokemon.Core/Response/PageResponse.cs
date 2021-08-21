@@ -5,7 +5,7 @@ namespace Pokemon.Core.Pokemon.Response
 {
     public class PageResponse<T>
     {
-        public PageResponse() {}
+        public PageResponse(){}
         public PageResponse(IEnumerable<T> Data)
         {
             

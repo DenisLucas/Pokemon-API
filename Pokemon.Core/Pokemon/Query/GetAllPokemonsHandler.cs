@@ -10,18 +10,18 @@ using Pokemon.Infrastructure;
 
 namespace Pokemon.Core.Pokemon.Query
 {
-    public class GetAllHandler : IRequestHandler<AllPokemonsQuery, List<PokemonViewModel>>
+    public class GetAllPokemonsHandler : IRequestHandler<GetAllPokemonsQuery, List<PokemonViewModel>>
     {
-        public AppDbContext _context;
-        public GetAllHandler(AppDbContext context)
+        public PokemonDbContext _context;
+        public GetAllPokemonsHandler(PokemonDbContext context)
         {
             _context = context;
         }
         
-        public async Task<List<PokemonViewModel>> Handle(AllPokemonsQuery request, CancellationToken cancellationToken)
+        public async Task<List<PokemonViewModel>> Handle(GetAllPokemonsQuery request, CancellationToken cancellationToken)
         {
             var skip = (request.Pagination.page - 1) * request.Pagination.pageSize;
-            return await _context.pokemons.OrderBy(x => x.Id).Skip(skip).Take(request.Pagination.pageSize).Select(pokemon => new PokemonViewModel
+            return await _context.Pokemons.OrderBy(x => x.Id).Skip(skip).Take(request.Pagination.pageSize).Select(pokemon => new PokemonViewModel
                 {
                    Name = pokemon.Name,
                    Type1 = pokemon.Type1,
@@ -34,7 +34,7 @@ namespace Pokemon.Core.Pokemon.Query
                    SpDefense = pokemon.SpDefense,
                    Speed = pokemon.Speed,
                    Generation = pokemon.Generation,
-                   legendary = Convert.ToBoolean(pokemon.Legendary) 
+                   Legendary = Convert.ToBoolean(pokemon.Legendary) 
                 }).ToListAsync();
         }
 

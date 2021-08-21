@@ -10,18 +10,18 @@ using Pokemon.Infrastructure;
 
 namespace Pokemon.Core.Pokemon.Query
 {
-    public class GetAllbyGenQuery : IRequestHandler<PokemongenQuery, List<PokemonViewModel>>
+    public class GetAllPokemonsbyGenQuery : IRequestHandler<GetAllPokemonsByGenQuery, List<PokemonViewModel>>
     {
-        public AppDbContext _context;
-        public GetAllbyGenQuery(AppDbContext context)
+        public PokemonDbContext _context;
+        public GetAllPokemonsbyGenQuery(PokemonDbContext context)
         {
             _context = context;
         }
         
-        public async Task<List<PokemonViewModel>> Handle(PokemongenQuery request, CancellationToken cancellationToken)
+        public async Task<List<PokemonViewModel>> Handle(GetAllPokemonsByGenQuery request, CancellationToken cancellationToken)
         {
-            var skip = (request.pagination.page - 1) * request.pagination.pageSize;
-            return await _context.pokemons.Where(x=> x.Generation == request.Generation).OrderBy(x => x.Id).Skip(skip).Take(request.pagination.pageSize).Select(pokemon => new PokemonViewModel
+            var skip = (request.Pagination.page - 1) * request.Pagination.pageSize;
+            return await _context.Pokemons.Where(x=> x.Generation == request.Generation).OrderBy(x => x.Id).Skip(skip).Take(request.Pagination.pageSize).Select(pokemon => new PokemonViewModel
                 {
                     Name = pokemon.Name,
                     Type1 = pokemon.Type1,
@@ -35,7 +35,7 @@ namespace Pokemon.Core.Pokemon.Query
                     SpDefense = pokemon.SpDefense,
                     Speed = pokemon.Speed,
                     Generation = pokemon.Generation,
-                    legendary = Convert.ToBoolean(pokemon.Legendary) 
+                    Legendary = Convert.ToBoolean(pokemon.Legendary) 
                 }).ToListAsync();
         }
 

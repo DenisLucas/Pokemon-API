@@ -10,9 +10,9 @@ namespace Pokemon.Tests.Pokemon
     {
         
         [Fact]
-        public void CreatePokemonValidatorTest_shouldReturn_Error()
+        public void CreatePokemonValidatorTestShouldReturnError()
         {
-            var pokemon = new PokemonCommand
+            var pokemon = new CreatePokemonCommand
                 {
 
                 };
@@ -32,9 +32,9 @@ namespace Pokemon.Tests.Pokemon
             
         }
         [Fact]
-        public void EditPokemonValidatorTest_shouldReturn_Error()
+        public void EditPokemonValidatorTestShouldReturnError()
         {
-            var pokemon = new PokemonEditCommand
+            var pokemon = new EditPokemonCommand
                 {
 
                 };

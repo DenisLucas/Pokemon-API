@@ -8,7 +8,7 @@ using Pokemon.Infrastructure;
 
 namespace Pokemon.Infrastructure.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
+    [DbContext(typeof(PokemonDbContext))]
     [Migration("20210819145636_total")]
     partial class total
     {

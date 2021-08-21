@@ -4,7 +4,7 @@ using Pokemon.Core.Pokemon.Command;
 
 namespace Pokemon.Core.Filters.Validators
 {
-    public class CreatePokemonValidators : AbstractValidator<PokemonCommand>
+    public class CreatePokemonValidators : AbstractValidator<CreatePokemonCommand>
     {
         public CreatePokemonValidators()
         {

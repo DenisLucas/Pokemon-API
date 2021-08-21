@@ -9,17 +9,17 @@ using Pokemon.Infrastructure;
 
 namespace Pokemon.Core.Pokemon.Query
 {
-    public class GetByIdHandler : IRequestHandler<PokemonQuery, PokemonViewModel>
+    public class GetPokemonByIdHandler : IRequestHandler<GetPokemonByIdQuery, PokemonViewModel>
     {
-        public AppDbContext _context;
-        public GetByIdHandler(AppDbContext context)
+        public PokemonDbContext _context;
+        public GetPokemonByIdHandler(PokemonDbContext context)
         {
             _context = context;
         }
         
-        public async Task<PokemonViewModel> Handle(PokemonQuery request, CancellationToken cancellationToken)
+        public async Task<PokemonViewModel> Handle(GetPokemonByIdQuery request, CancellationToken cancellationToken)
         {
-            var response = await _context.pokemons.Where(x => x.Id == request.Id)
+            var response = await _context.Pokemons.Where(x => x.Id == request.Id)
                 .Select(pokemon => new PokemonViewModel
                 {
                    Name = pokemon.Name,
@@ -33,7 +33,7 @@ namespace Pokemon.Core.Pokemon.Query
                    SpDefense = pokemon.SpDefense,
                    Speed = pokemon.Speed,
                    Generation = pokemon.Generation,
-                   legendary = Convert.ToBoolean(pokemon.Legendary) 
+                   Legendary = Convert.ToBoolean(pokemon.Legendary) 
                 }).FirstOrDefaultAsync();
             return response;
         }

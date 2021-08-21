@@ -1,18 +1,17 @@
 using System;
 using Microsoft.AspNetCore.WebUtilities;
-using Pokemon.Core.Pokemon.Interfaces;
 using Pokemon.Core.Pokemon.Response.Query;
 
-namespace Pokemon.Core.Pokemon.Services
+namespace Pokemon.Core.Pokemon.Helpers
 {
-    public class UrlServices : IUrlServices
+    public class UrlHelper
     {
         private readonly string _baseUrl;
-        public UrlServices(string baseUrl)
+        public UrlHelper(string baseUrl)
         {
             _baseUrl = baseUrl;
         }
-        public Uri GetAllPokemonsUri(PaginationQuery pagination = null)
+        public Uri GetAllUri(PaginationQuery pagination = null)
         {
             var _uri = new Uri(_baseUrl);
             if (pagination == null) return _uri;
@@ -22,7 +21,7 @@ namespace Pokemon.Core.Pokemon.Services
             return new Uri(modifieduri);
         }
 
-        public Uri GetPokemonUri(string pokemonId)
+        public Uri GetUri(string pokemonId)
         {
             return new Uri(_baseUrl + "/get/api/v1/{id}".Replace("{id}", pokemonId));
         }

@@ -7,14 +7,14 @@ using Pokemon.Infrastructure;
 
 namespace Pokemon.Core.Pokemon.Command
 {
-    public class CreatePokemonHandler : IRequestHandler<PokemonCommand, Pokemons>
+    public class CreatePokemonHandler : IRequestHandler<CreatePokemonCommand, Pokemons>
     {
-        public AppDbContext _context;
-        public CreatePokemonHandler(AppDbContext context)
+        public PokemonDbContext _context;
+        public CreatePokemonHandler(PokemonDbContext context)
         {
             _context = context;
         }
-        public async Task<Pokemons> Handle(PokemonCommand request, CancellationToken cancellationToken)
+        public async Task<Pokemons> Handle(CreatePokemonCommand request, CancellationToken cancellationToken)
         {
             var poke = new Pokemons 
             {
@@ -31,7 +31,7 @@ namespace Pokemon.Core.Pokemon.Command
                 Generation = request.generation,
                 Legendary = Convert.ToByte(request.Legendary)
             };
-            await _context.pokemons.AddAsync(poke);
+            await _context.Pokemons.AddAsync(poke);
             await _context.SaveChangesAsync();
 
             return poke;

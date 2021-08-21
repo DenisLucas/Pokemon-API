@@ -11,15 +11,15 @@ namespace Pokemon.Core.Pokemon.Command
 {
     public class EditPokemonHandler : IRequestHandler<PokemonEditWithIdCommand, Pokemons>
     {
-        public AppDbContext _context;
-        public EditPokemonHandler(AppDbContext context)
+        public PokemonDbContext _context;
+        public EditPokemonHandler(PokemonDbContext context)
         {
             _context = context;
         }
         public async Task<Pokemons> Handle(PokemonEditWithIdCommand request, CancellationToken cancellationToken)
         {
             
-            var poke = await _context.pokemons.Where(x => x.Id == request.id).FirstOrDefaultAsync(); 
+            var poke = await _context.Pokemons.Where(x => x.Id == request.Id).FirstOrDefaultAsync(); 
             
             poke.Name = request.Pokemon.Name;
             poke.Type1 = request.Pokemon.Type1;

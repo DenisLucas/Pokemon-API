@@ -8,7 +8,7 @@ using Pokemon.Infrastructure;
 
 namespace Pokemon.Infrastructure.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
+    [DbContext(typeof(PokemonDbContext))]
     [Migration("20210819024550_Initial")]
     partial class Initial
     {

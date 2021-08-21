@@ -6,21 +6,20 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Pokemon.Api.Controllers.Pokemon;
 using Pokemon.Core.Pokemon.Command;
-using Pokemon.Core.Pokemon.Interfaces;
-using Pokemon.Domain.ViewModel.Pokemon;
+using Pokemon.Core.Pokemon.Helpers;
 using Xunit;
 namespace Pokemon.Tests.Pokemon
 {
     public class PokemonControllerTests
     {
         [Fact]
-        public async Task CreatePokemonAsync_ShouldReturn_PokemonModelView()
+        public async Task CreatePokemonAsyncShouldReturnPokemonModelView()
         {
         //Given
         var _mediator = A.Fake<IMediator>();
-        var _urlServices = A.Fake<IUrlServices>();
+        var _urlServices = A.Fake<UrlHelper>();
         PokemonController pokemonController = new PokemonController(_mediator,_urlServices);
-        var pokemon = new PokemonCommand
+        var pokemon = new CreatePokemonCommand
             {
                 Name = "Pokemon",
                 Type1 = "fogo",
@@ -36,7 +35,7 @@ namespace Pokemon.Tests.Pokemon
 
             };
         //When
-        IActionResult result = await pokemonController.CreatePokemonAsync(pokemon);
+        IActionResult result = await pokemonController.createPokemonAsync(pokemon);
         var okResult = result as CreatedResult;
 
         // assert
@@ -48,13 +47,13 @@ namespace Pokemon.Tests.Pokemon
         Assert.IsType<CreatedResult>(result);
         }
         [Fact]
-        public async Task EditPokemonAsync_ShouldReturn_PokemonModelView()
+        public async Task EditPokemonAsyncShouldReturnPokemonModelView()
         {
         //Given
         var _mediator = A.Fake<IMediator>();
-        var _urlServices = A.Fake<IUrlServices>();
+        var _urlServices = A.Fake<UrlHelper>();
         PokemonController pokemonController = new PokemonController(_mediator,_urlServices);
-        var pokemon = new PokemonEditCommand
+        var pokemon = new EditPokemonCommand
             {
                 Name = "Pokemon",
                 Type1 = "fogo",
@@ -70,7 +69,7 @@ namespace Pokemon.Tests.Pokemon
 
             };
         //When
-        IActionResult result = await pokemonController.EditPokemonAsync(pokemon, 69);
+        IActionResult result = await pokemonController.editPokemonAsync(pokemon, 69);
         var okResult = result as OkResult;
 
         // assert
